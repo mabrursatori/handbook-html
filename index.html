@@ -15,45 +15,17 @@
         <div class="sidebar">
             <ul>
                 <li>
-                    <a class="active" >
-                        <span class="item">Home</span>
+                    <a data-name="home" class="active">
+                        <span class="item">HTML Handbook</span>
                     </a>
                 </li>
                 <li>
-                    <a data-name='dashboard'  >
-                        <span class="item">My Dashboard</span>
-                    </a>
+                    <input type="text" class="search">
                 </li>
-                <li>
-                    <a href="#">
-                        <span class="item">People</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span class="item">Perfomance</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span class="item">Development</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span class="item">Reports</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span class="item">Admin</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span class="item">Settings</span>
-                    </a>
-                </li>
+            </ul>
+            <ul class="items">
+                
+                
             </ul>
         </div>
 
@@ -65,9 +37,33 @@
 
     </div>
   <script>
-   
 
+    function assignSideBar(sideBarList){
+        const sideBarChild = sideBarList.reduce((acc, curr) =>  `
+        ${acc}
+                <li>
+                    <a data-name="${curr.name}" >
+                        <span class="item">${curr.label}</span>
+                    </a>
+                </li>`, '');
+
+    document.querySelector(".sidebar ul.items").innerHTML = sideBarChild;
+    }
+
+    const sideBar = [
+        {label: "Paragraf", name: "paragraf"},
+        {label: "Table", name: "table"},
+        {label: "List", name:"list"},
+        {label: "Hyperlink", name:"hyperlink"},
+        {label: "Image", name:"image"},
+        {label: "Form", name:"form"}
+    ];
+
+    assignSideBar(sideBar);
+    
+   
     const comp = document.querySelectorAll(".sidebar ul li a");
+    console.log(comp)
     comp.forEach((item) =>{
         item.addEventListener("click", function(event) {
             var targetElement = event.target || event.srcElement;
@@ -77,10 +73,24 @@
             .then(text=> document.getElementById('root').innerHTML = text);
         })
     })
-    fetch('content/contoh.html')
+    fetch('content/home.html')
   .then(response=> response.text())
   .then(text=> document.getElementById('root').innerHTML = text);
-   // document.getElementById("root").innerHTML = `<h1>Yo</h1>`;
+
+    const search = document.querySelector(".search");
+    search.addEventListener("keyup", function(event){
+        const key = event.target.value;
+        filterSidebar(key);
+    })
+
+    function filterSidebar(key){
+        if(!key){
+            return assignSideBar(sideBar)
+        }
+        const sideBarResult = sideBar.filter((item) => item.label.toLocaleLowerCase().includes(key.toLocaleLowerCase()));
+        assignSideBar(sideBarResult)
+    }
+   
   </script>
 </body>
 </html>

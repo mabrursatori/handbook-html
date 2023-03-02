@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
-*{
+*:not(.container *){
     list-style: none;
     text-decoration: none;
     margin: 0;
@@ -55,6 +55,23 @@ body{
 .wrapper .sidebar ul li a:hover:before,
 .wrapper .sidebar ul li a.active:before{
     display: block;
+}
+
+.wrapper .sidebar ul li .search{
+    margin: 10px;
+    margin-left: 25px;
+    height: 30px;
+    padding: 5px;
+}
+
+.container{
+    padding: 30px;
+}
+
+textarea{
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
 }
 
 #root {
