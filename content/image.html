@@ -1,11 +1,50 @@
 <style>
     textarea{
-        width: 400px;
+        width: 580px;
         height: 300px;
     }
+    
 </style>
 <div class="container">
     <h2>Code</h2>
+
+    <textarea disabled>
+<img src="img/cat-small.png" alt="alt_example" title="title_example" 
+srcset="img/cat-small.jpg 500w,
+        img/cat-medium.jpg 750w,
+        img/cat-large.jpg 1000w"
+sizes="(min-width: 1200px) 50w"
+loading="lazy">
+
+if 500w, than img/cat-small.jpg
+if 750w, than img/cat-medium.jpg
+if 1000w, img/cat-large.jpg 1000w
+
+if min-width: 1200px, than 50w
+
+<img src="img/cat-small.png" alt="alt_example" title="title_example" 
+srcset="img/cat-small.jpg 1x,
+        img/cat-medium.jpg 2x,
+        img/cat-large.jpg 3x">
+        
+    </textarea>
+
+    <textarea disabled>
+<figure>
+    <img src="logo.png" alt="alt_example" >
+    <figcaption>Contoh figcaption</figcaption>
+</figure>
+                
+    </textarea>
+
+    <textarea disabled>
+<picture>
+    <source media="(min-width: 960px)" srcset="img/cat-large.png" sizes="50vw">
+    <source media="(min-width: 600px)" srcset="img/cat-medium.jpg"> 
+    <img src="logo.png" alt="alt_example" >
+</picture>
+                        
+    </textarea>
 
     <textarea disabled>
 <img src="logo.png" alt="alt_example" title="title_example" width="200px" height="200px">
@@ -21,4 +60,9 @@
     <img src="logo.png" alt="alt_example" title="title_example" width="200px" height="200px">
     <img src="logo.pn" alt="alt_example">
     <img src="logo.png" alt="alt_example" title="title_example" width="50%">
+
+    <figure>
+        <img src="logo.png" alt="alt_example" >
+        <figcaption>Contoh figcaption</figcaption>
+    </figure>
 </div>

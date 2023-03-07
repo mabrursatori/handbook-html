@@ -1,0 +1,98 @@
+<style>
+    textarea{
+        width: 800px;
+        height: 300px;
+    }
+</style>
+<div class="container">
+    <h2>audio</h2>
+    <ul>
+        <li>src</li>
+        <dd>sumber file</dd>
+        <li>controls</li>
+        <dd>agar user bisa mengendalikan audio-nya menggunakan controller default, jika tidak dipakai asumsinya akan dijalankan menggunakan javascript</dd>
+        <li>preload</li>
+        <dd>membuat file diload dulu sebelum dijalankan</dd>
+        <li>autoplay</li>
+        <dd>untuk menjalankan audio secara otomatis</dd>
+        <li>loop</li>
+        <dd>mengulang audio jika sudah selesai</dd>
+        <li>muted</li>
+        <dd>agar audio tidak ada suaranya</dd>
+        <li>format file: .mp3, .wav, .ogg</li>
+    </ul>
+
+    <textarea disabled>
+<audio src="audio/1.mp3" controls></audio>
+
+
+<figure>
+    <figcaption>Dengarkan musik ini</figcaption>
+    <audio controls autoplay loop muted>
+        <source src="audio/1.ogg" type="audio/ogg">
+        <source src="audio/1.mpr" type="audio/mpeg">
+    </audio>
+</figure>
+    </textarea>
+    
+
+
+    <h2>video</h2>
+    <ul>
+        <li>src</li>
+        <dd>sumber file</dd>
+        <li>controls</li>
+        <dd>agar user bisa mengendalikan video-nya menggunakan controller default, jika tidak dipakai asumsinya akan dijalankan menggunakan javascript</dd>
+        <li>poster</li>
+        <dd>menampilkan gambar saat video tidak berjalan</dd>
+        <li>preload</li>
+        <dd>membuat file diload dulu sebelum dijalankan</dd>
+        <li>autoplay</li>
+        <dd>untuk menjalankan video secara otomatis</dd>
+        <li>loop</li>
+        <dd>mengulang video jika sudah selesai</dd>
+        <li>muted</li>
+        <dd>agar video tidak ada suaranya</dd>
+        <li>format file: .mp4, .webm</li>
+    </ul>
+
+    <textarea disabled>
+<video src="video/1.mp4" controls width="400"></video>
+
+
+<figure>
+    <figcaption>Tonton video</figcaption>
+    <video controls autoplay loop muted width="400" poster="img/poster.jpg">
+        <source src="video/1.webm" type="video/webm">
+        <source src="video/1.mp4" type="video/mp4">
+        Browser tidak mendukung tag <code>video</code>
+    </video>
+</figure>
+    </textarea>
+
+
+    <h2>track</h2>
+    <ul>
+        <li>src</li>
+        <dd>sumber file</dd>
+        <li>kind</li>
+        <dd>subtitle, captions, chapter, description</dd>
+        <li>title</li>
+        <dd>judul dari caption/subtitle ditulis dalam bahasa apa</dd>
+        <li>srclang</li>
+        <dd>kode bahasa</dd>
+    </ul>
+
+    <textarea disabled>    
+<figure>
+    <figcaption>Tonton video</figcaption>
+    <video controls autoplay loop muted width="400" poster="img/poster.jpg">
+        <source src="video/1.webm" type="video/webm">
+        <source src="video/1.mp4" type="video/mp4">
+        <track src="captions/caption.vtt" kind="captions" title="Bahasa Indonesia" srclang="id">
+        <track src="captions/caption.vtt" kind="captions" title="English" srclang="en">
+    </video>
+</figure>
+    </textarea>
+    
+</div>
